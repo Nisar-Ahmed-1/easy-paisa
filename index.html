@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enter Details</title>
+     <link rel="icon" href="images.jfif" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#f2f2f2;display:flex;justify-content:center;padding:20px}
+.card{background:#111;width:100%;max-width:360px;border-radius:16px;padding:22px}
+.card h2{color:#d4af37;font-size:20px;margin-bottom:18px}
+label{font-size:11px;color:#8a8a8a;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 6px;display:block}
+input{width:100%;background:#0a0a0a;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;outline:none}
+input:focus{border-color:#d4af37}
+.btn{width:100%;background:#d4af37;color:#000;border:0;border-radius:10px;padding:13px;font-weight:800;margin-top:22px;cursor:pointer;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Enter Details</h2>
+<label>Sent to - Name</label><input id="toName" value="MUHAMMAD NAVEED">
+<label>Sent to - Account</label><input id="toAcc" value="03451234566">
+<label>Sent by - Name</label><input id="fromName" value="NASIR AHMED">
+<label>Sent by - Account</label><input id="fromAcc" value="03457773774">
+<label>Amount Rs.</label><input id="amt" type="number" value="2000">
+<label>Funding Source</label><input id="fund" value="Account">
+<button class="btn" onclick="go()">GENERATE</button>
+</div>
+<script>
+function go(){
+  const data={
+    toName:document.getElementById('toName').value,
+    toAcc:document.getElementById('toAcc').value,
+    fromName:document.getElementById('fromName').value,
+    fromAcc:document.getElementById('fromAcc').value,
+    amt:document.getElementById('amt').value,
+    fund:document.getElementById('fund').value,
+    txn:'#'+Math.floor(10000000000+Math.random()*90000000000),
+    date:new Date().toLocaleString('en-GB',{day:'numeric',month:'long',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).replace(',',' at')
+  };
+  localStorage.setItem('receiptData', JSON.stringify(data));
+  window.location.href='receipt-view.html';
+}
+</script>
+</body>
+</html>

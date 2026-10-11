@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy-Paisa</title>
+<!-- <icon rel="shortcut icon" href="logo.jpeg" type="image/x-icon"> -->
+     <link rel="icon" href="images.jfif" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="reciept.css">
+</head>
+<body>
+     <div class="main" id="main">
+     <div class="wrap">
+          <div class="card" id="receipt">
+          <div class="head"><img src="logo.jpeg" id="logo"></div>
+<div class="head">Transaction Successful</div>
+<div class="head" id="mon">Money has been sent</div>
+<hr>
+<div class="row"><span class="l">Transaction ID</span><span class="r" id="rTxn"></span></div>
+<div class="row"><span class="l">Date & Time</span><span class="r" id="rDate"></span></div>
+<div class="row"><span class="l">Funding Source</span><span class="r" id="rFund"></span></div>
+<!-- <br> -->
+<hr>
+<div class="sec">Sent to</div>
+<div class="row"><span class="l">Name</span><span class="r" id="rToN"></span></div>
+<div class="row"><span class="l">Account Number</span><span class="r" id="rToA"></span></div>
+<!-- <br> -->
+<hr>
+<div class="sec">Sent by</div>
+<div class="row"><span class="l">Name</span><span class="r" id="rFromN"></span></div>
+<div class="row"><span class="l">Account Number</span><span class="r" id="rFromA"></span></div>
+
+<hr>
+<div class="sec">Charges</div>
+<div class="row"><span class="l">Amount</span><span class="r" id="rAmt"></span></div>
+<div class="row"><span class="l">Fee</span><span class="r">Rs. 0.00</span></div>
+<div class="total"><span class="rTot">Total Amount</span><span id="rTot"></span></div>
+<div class="foot"><img src="easy.jpeg" id="easy"><br></div>
+</div>
+</div>
+<button class="btn gold" onclick="download()">DOWNLOAD IMAGE</button>
+<button class="btn dark" onclick="location.href='index.html'">BACK TO FORM</button>
+</div>
+<script>
+const d=JSON.parse(localStorage.getItem('receiptData')||'{}');
+if(!d.toName) location.href='index.html';
+function fmt(n){return 'Rs. '+Number(n).toLocaleString('en-PK',{minimumFractionDigits:2})}
+document.getElementById('rTxn').innerText=d.txn;
+document.getElementById('rDate').innerText=d.date;
+document.getElementById('rFund').innerText=d.fund;
+document.getElementById('rToN').innerText=d.toName;
+document.getElementById('rToA').innerText=d.toAcc;
+document.getElementById('rFromN').innerText=d.fromName;
+document.getElementById('rFromA').innerText=d.fromAcc;
+document.getElementById('rAmt').innerText=fmt(d.amt);
+document.getElementById('rTot').innerText=fmt(d.amt);
+function download(){ html2canvas(document.getElementById('main'),{scale:3}).then(c=>{let a=document.createElement('a');a.download='receipt_'+Date.now()+'.png';a.href=c.toDataURL();a.click()})}
+</script>
+</body>
+</html>
