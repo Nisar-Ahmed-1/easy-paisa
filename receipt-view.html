@@ -54,7 +54,28 @@ document.getElementById('rFromN').innerText=d.fromName;
 document.getElementById('rFromA').innerText=d.fromAcc;
 document.getElementById('rAmt').innerText=fmt(d.amt);
 document.getElementById('rTot').innerText=fmt(d.amt);
-function download(){ html2canvas(document.getElementById('main'),{scale:3}).then(c=>{let a=document.createElement('a');a.download='receipt_'+Date.now()+'.png';a.href=c.toDataURL();a.click()})}
+function download(){ 
+  // Button ko hide karo download se pehle
+  let goldBtn = document.querySelector('.gold');
+  let darkBtn = document.querySelector('.dark');
+  goldBtn.style.display = 'none';
+  darkBtn.style.display = 'none';
+
+  html2canvas(document.getElementById('main'),{
+    scale: 3,
+    backgroundColor: null,
+    useCORS: true
+  }).then(c=>{
+    let a=document.createElement('a');
+    a.download='receipt_'+Date.now()+'.png';
+    a.href=c.toDataURL();
+    a.click();
+    
+    // Download ke baad button wapas dikhao
+    goldBtn.style.display = 'block';
+    darkBtn.style.display = 'block';
+  })
+}
 </script>
 </body>
 </html>
