@@ -1,56 +1,33 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-
-body{background:#d9e3df;display:flex;justify-content:center;padding:15px}
-.wrap{width:100%;max-width:390px;margin-top: 12px;}
+body{background:#d9e3df;display:flex;justify-content:center;padding:10px}
+.wrap{width:100%;max-width:390px;margin-top: 8px;}
 .card{
-     border-radius:2px;
-     padding:20px 18px;
+     border-radius:4px;
+     padding:14px 16px; /* pehle 20px tha, ab kam kiya */
      box-shadow:0 5px 20px rgba(0,0,0,.08);
      background-color: #ffffff;
 }
-.head{text-align:center;font-weight:700;color:#303339;font-size:18px;margin-bottom:5px}
-.row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;margin-bottom: 8px;}
+.head{text-align:center;font-weight:700;color:#303339;font-size:16px;margin-bottom:3px} /* 18px se 16px */
+.row{display:flex;justify-content:space-between;padding:2px 0;font-size:12px;margin-bottom: 4px;} /* 4px se 2px */
 .l{color:#312e2e}.r{color:#111;font-weight:500;text-align:right;max-width:60%;word-break:break-all}
-.sec{font-weight:500;font-size:14px;margin:17px 0 6px}
-.total{display:flex;justify-content:space-between;padding:12px 0;font-weight:500;font-size:18px;border-top:1px solid #434141;margin-top:8px;}
-.foot{font-size:10px;color:#888;text-align:center;margin-top:5px;border-top:1px solid #382f2f;padding-top:10px}
-.btn{width:100%;padding:12px;border-radius:10px;border:0;font-weight:800;margin-top:10px;cursor:pointer}
+.sec{font-weight:500;font-size:13px;margin:10px 0 4px} /* 17px se 10px */
+.total{display:flex;justify-content:space-between;padding:8px 0;font-weight:500;font-size:16px;border-top:1px solid #434141;margin-top:5px;} /* 12px se 8px */
+.foot{font-size:10px;color:#888;text-align:center;margin-top:3px;border-top:1px solid #382f2f;padding-top:6px}
+.btn{width:100%;padding:10px;border-radius:10px;border:0;font-weight:800;margin-top:8px;cursor:pointer}
 .gold{background:#d4af37}.dark{background:#111;color:#fff}
-#logo{
-     width: 60px;
-     border-radius: 50%;
-}
-#mon{
-     font-size: 12px;
-     font-weight: 500;
-     color: #303339;
-}
-#easy{
-     width: 45%;
-     height: 25px;
-}
-#rTot{
-   color: #434141;
-}
-.rTot{
-color: #3a3838;
-}
-
+#logo{width: 50px; border-radius: 50%;} /* 60px se 50px */
+#mon{font-size: 11px;font-weight: 500;color: #303339;}
+#easy{width: 40%;height: 22px;}
+#rTot{color: #434141;}
+.rTot{color: #3a3838;}
 .main{
      width: 100%;
      max-width: 410px;
-     min-height: 757px;
+     min-height: auto; /* 757px hata diya */
+     height: auto;
      background: linear-gradient(240deg, #438f48 30%, #83a984 70%);
      display: flex;
      flex-direction: column;
      align-items: center;
-     padding: 15px;
-}
-
-@media (max-width:768px){
-     .main{
-          max-width: 100%;
-          min-height: 100vh;
-          height: auto;
-     }
+     padding: 12px;
 }
