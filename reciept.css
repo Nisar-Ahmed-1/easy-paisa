@@ -1,14 +1,14 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 
 body{background:#d9e3df;display:flex;justify-content:center;padding:15px}
-.wrap{width:100%;max-width:390px;margin-top: 30px;}
+.wrap{width:100%;max-width:390px;margin-top: 12px;}
 .card{
      
      border-radius:2px;
      padding:20px 18px;
      box-shadow:0 5px 20px rgba(0,0,0,.08);
      background-color: #ffffff;
-     margin-left: 20px;
+     /* margin-left: 20px; */
 }
 .head{text-align:center;font-weight:700;color:#303339;font-size:18px;margin-bottom:5px}
 .row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;margin-bottom: 8px;}
@@ -44,16 +44,18 @@ color: #3a3838;
      width: 410px;
      height: 757px;
      justify-content: center;
-     /* background-color: #07a357a9; */
-     /* Card ka outer background gradient */
-/* .card-background { */
     background: linear-gradient(240deg, #438f48 30%, #83a984 70%);
 }
 
 /* Receipt ka box jo andar solid white hai */
-.receipt-box {
+/* .receipt-box {
     background-color: #ffffff;
-    /* Agar halka transparent ya frosted look chahiye ho toh opacity ya rgba use kar sakte hain */
-}
+} */
 
-/* } */
+@media (max-width:768px){
+     .main{
+          width: 424px;
+          height: 685px;
+          padding: 20px;
+     }
+}
